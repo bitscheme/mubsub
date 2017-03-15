@@ -44,6 +44,10 @@ describe('Channel', function () {
             done();
         });
 
+        this.channel.once('error', function (error) {
+            console.log(error);
+        });
+
         this.channel.publish('a', 'a');
         this.channel.publish('a', 'a');
         this.channel.publish('a', 'a');
@@ -135,7 +139,7 @@ describe('Channel', function () {
 
     it('gets lots of subscribed data fast enough', function (done) {
         var channel = this.client.channel('channel.bench', { size: 1024 * 1024 * 100 });
-        
+
         var n = 5000;
         var count = 0;
 
