@@ -24,7 +24,7 @@
     "url": "git://github.com/scttnlsn/mubsub.git"
   },
   "dependencies": {
-    "mongodb": "^2.2.24"
+    "mongodb": "^2.2.22"
   },
   "devDependencies": {
     "mocha": "^2.2.5"

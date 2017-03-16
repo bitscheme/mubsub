@@ -21,6 +21,18 @@ describe('Channel', function () {
         this.channel.publish('a', 'a');
     });
 
+    it('1s timeout should work properly', function (done) {
+        var subscription = this.channel.subscribe('a', function (data) {
+            assert.equal(data, 'a');
+            subscription.unsubscribe();
+            done();
+        });
+
+        this.channel.once('ready', () => {
+            setTimeout(() => this.channel.publish('a', 'a'), 1000);
+        });
+    });
+
     it('unsubscribes if channel is closed', function (done) {
         var self = this;
 
