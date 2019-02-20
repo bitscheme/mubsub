@@ -38,8 +38,7 @@ describe('Channel', function () {
 
         var subscription = this.channel.subscribe('a', function (data) {
             assert.equal(data, 'a');
-            self.channel.close();
-            done();
+            self.channel.close().then(done);
         });
 
         this.channel.publish('a', 'a');
@@ -52,8 +51,7 @@ describe('Channel', function () {
 
         var subscription = this.channel.subscribe('a', function (data) {
             assert.equal(data, 'a');
-            self.client.close();
-            done();
+            self.client.close(done);
         });
 
         this.channel.once('error', function (error) {

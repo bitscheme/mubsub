@@ -24,10 +24,11 @@
     "url": "git://github.com/scttnlsn/mubsub.git"
   },
   "dependencies": {
-    "mongodb": "^2.2.22"
+    "mongodb": "3.1.13",
+    "node-memwatch": "1.0.1"
   },
   "devDependencies": {
-    "mocha": "^2.2.5"
+    "mocha": "6.0.0"
   },
   "scripts": {
     "test": "mocha test --timeout 10000",
