@@ -1,5 +1,5 @@
 {
-  "name": "mubsub",
+  "name": "@bitscheme/mubsub",
   "version": "1.3.0",
   "description": "Pub/sub for Node.js and MongoDB",
   "homepage": "http://github.com/scttnlsn/mubsub",
@@ -21,7 +21,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/scttnlsn/mubsub.git"
+    "url": "git://github.com/bitscheme/mubsub.git"
   },
   "dependencies": {
     "mongodb": "3.1.13",
@@ -33,8 +33,8 @@
   "scripts": {
     "test": "mocha test --timeout 10000",
     "publish": "git push origin && git push origin --tags",
-    "release:patch": "npm version patch && npm publish",
-    "release:minor": "npm version minor && npm publish",
-    "release:major": "npm version major && npm publish"
+    "release:patch": "npm version patch && npm publish --access public",
+    "release:minor": "npm version minor && npm publish --access public",
+    "release:major": "npm version major && npm publish --access public"
   }
 }
